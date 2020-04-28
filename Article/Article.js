@@ -120,6 +120,12 @@ function createArticle(title, date, par1, par2, par3){
   articleDate.classList.add("date");
   articleButton.classList.add("expandButton"); 
 
+  // set text content 
+  articleTitle.textContent = title;
+  articleDate.textContent = date;
+  articleContent1.textContent = par1;
+  articleContent2.textContent = par2;
+  articleContent3.textContent = par3; 
 
   //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
