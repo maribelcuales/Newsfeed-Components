@@ -112,6 +112,9 @@ function createArticle(title, date, par1, par2, par3){
   const articleContent3 = document.createElement('p');
   const articleButton = document.createElement('span');
 
+  // append dom elements to parent class article 
+  article.append(articleTitle, articleDate, articleContent1, articleContent2, articleContent3, articleButton);
+
 
 
   //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
