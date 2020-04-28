@@ -103,32 +103,43 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 */
-function createArticle(title, date, par1, par2, par3){
+function createArticle(title, date, par1, par2, par3) {
   const article = document.createElement('div');
   const articleTitle = document.createElement('h2');
   const articleDate = document.createElement('p');
   const articleContent1 = document.createElement('p');
   const articleContent2 = document.createElement('p');
   const articleContent3 = document.createElement('p');
-  const articleButton = document.createElement('span');
+  const articleOpen = document.createElement('span');
 
   // append dom elements to parent class article 
-  article.append(articleTitle, articleDate, articleContent1, articleContent2, articleContent3, articleButton);
+  article.appendChild(articleTitle);
+  article.appendChild(articleDate);
+  article.appendChild(articleContent1);
+  article.appendChild(articleContent2);
+  article.appendChild(articleContent3);
+  article.appendChild(articleOpen);
 
   // add classes to elements 
   article.classList.add("article");
   articleDate.classList.add("date");
-  articleButton.classList.add("expandButton"); 
+  articleOpen.classList.add("expandButton"); 
 
   // set text content 
   articleTitle.textContent = title;
   articleDate.textContent = date;
   articleContent1.textContent = par1;
   articleContent2.textContent = par2;
-  articleContent3.textContent = par3; 
+  articleContent3.textContent = par3;
+  articleOpen.textContent = "\u25bc";
 
   //Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
+  articleOpen.addEventListener('click', event => {
+    console.log('span click', event.target); 
+    //articleOpen.classList.toggle('expandButton');
+    article.classList.toggle('article-open'); 
+  })
   //Step 3: return the entire component.
   return createArticle; 
 }
