@@ -43,11 +43,8 @@ function createMenu(array) {
 
   listItem.textContent = array;
 
+  const menuButton = document.querySelector('.menu-button'); 
   
-
-
-
-
   return menu; 
 }
   
