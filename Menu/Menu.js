@@ -43,7 +43,12 @@ function createMenu(array) {
 
   listItem.textContent = array;
 
-  const menuButton = document.querySelector('.menu-button'); 
+  const menuButton = document.querySelector('.menu-button');
+  
+  menuButton.addEventListener('click', event => {
+    console.log('menuButton clicked!', event.target); 
+    menu.classList.toggle('menu--open');
+  })
   
   return menu; 
 }
