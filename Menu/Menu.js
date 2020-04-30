@@ -62,3 +62,8 @@ function createMenu(array) {
 const header = document.querySelector('.header'); 
 
 header.appendChild(createMenu(menuItems)); 
+
+menuItems.push('Jobs'); 
+console.log(menuItems); 
+
+header.appendChild(createMenu(menuItems));
